@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Companion</title>
+    <meta name="description" content="Your personal AI-powered study companion for enhanced learning">
+    <meta name="keywords" content="AI, study, companion, learning, education, notes, PYQs">
+    <meta name="theme-color" content="#ff6b6b">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Interactive Background Canvas -->
+    <canvas id="interactive-canvas" class="interactive-canvas"></canvas>
+    
+    <!-- Animated Background -->
+    <div id="animated-background" class="animated-background"></div>
+    
+    <!-- University Background Image -->
+    <div id="university-background" class="university-background"></div>
+    
+    <!-- Mouse Trail Container -->
+    <div id="mouse-trail" class="mouse-trail"></div>
+    
+    <!-- Interactive Particles Container -->
+    <div id="particles-container" class="particles-container"></div>
+    
+    <!-- Raining Math Symbols Container -->
+    <div id="math-symbols" class="math-symbols"></div>
+    
+    <!-- Transition Overlay -->
+    <div id="transition-overlay" class="transition-overlay"></div>
+    
+    <!-- Main Content Container -->
+    <div id="main-content" class="main-content">
+        <!-- Home Page -->
+        <div id="page-0" class="page active">
+            <div class="page-content">
+                <div class="hero-section">
+                    <h1 id="main-title" class="main-title">AI Study</h1>
+                    <h2 id="sub-title" class="sub-title">Companion</h2>
+                    <div id="hero-icon" class="hero-icon">
+                        <svg class="brain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                            <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                            <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                            <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                            <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                            <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                            <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button id="get-started-btn" class="btn btn-primary" onclick="navigateToPage(1)">
+                        Get Started
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </button>
+                    <button id="know-more-btn" class="btn btn-secondary" onclick="navigateToPage(2)">
+                        Know More
+                    </button>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <div class="scroll-text">Scroll to explore</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notes Page -->
+        <div id="page-1" class="page">
+            <div class="page-content">
+                <div class="page-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <h1 class="page-title">Notes Uploader</h1>
+                <p class="page-description">Upload and organize your study materials with AI-powered categorization and smart search.</p>
+                <div class="continue-indicator">
+                    <div class="scroll-text">Continue scrolling</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Companion Page -->
+        <div id="page-2" class="page">
+            <div class="page-content">
+                <div class="page-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                        <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                        <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                        <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                        <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                        <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                        <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                        <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                        <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+                    </svg>
+                </div>
+                <h1 class="page-title">AI Companion</h1>
+                <p class="page-description">Your personal AI tutor that adapts to your learning style and provides instant help.</p>
+                <div class="continue-indicator">
+                    <div class="scroll-text">Continue scrolling</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Performance Stats Page -->
+        <div id="page-3" class="page">
+            <div class="page-content">
+                <div class="page-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                    </svg>
+                </div>
+                <h1 class="page-title">Performance Stats</h1>
+                <p class="page-description">Track your learning progress with detailed analytics and performance insights.</p>
+                <div class="continue-indicator">
+                    <div class="scroll-text">Continue scrolling</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PYQs Page -->
+        <div id="page-4" class="page">
+            <div class="page-content">
+                <div class="page-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
+                    </svg>
+                </div>
+                <h1 class="page-title">PYQs</h1>
+                <p class="page-description">Access previous year questions with AI-generated solutions and explanations.</p>
+                <div class="continue-indicator">
+                    <div class="scroll-text">Continue scrolling</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Profile Page -->
+        <div id="page-5" class="page">
+            <div class="page-content">
+                <div class="page-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </div>
+                <h1 class="page-title">Your Profile</h1>
+                <p class="page-description">Customize your learning experience and track your academic journey.</p>
+                <div class="continue-indicator">
+                    <div class="scroll-text">Continue scrolling</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Page -->
+        <div id="page-6" class="page">
+            <div class="page-content">
+                <div class="page-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <h1 class="page-title">Contact Us</h1>
+                <p class="page-description">Get in touch with our support team for any questions or assistance.</p>
+                <div class="continue-indicator">
+                    <div class="scroll-text">Continue scrolling</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Disclaimer Page -->
+        <div id="page-7" class="page">
+            <div class="page-content">
+                <div class="page-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <h1 class="page-title">Disclaimer</h1>
+                <p class="page-description">Important information about our services and terms of use.</p>
+                <div class="continue-indicator">
+                    <div class="scroll-text">Continue scrolling</div>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Indicators -->
+    <div id="page-indicators" class="page-indicators">
+        <button class="indicator active" onclick="navigateToPage(0)"></button>
+        <button class="indicator" onclick="navigateToPage(1)"></button>
+        <button class="indicator" onclick="navigateToPage(2)"></button>
+        <button class="indicator" onclick="navigateToPage(3)"></button>
+        <button class="indicator" onclick="navigateToPage(4)"></button>
+        <button class="indicator" onclick="navigateToPage(5)"></button>
+        <button class="indicator" onclick="navigateToPage(6)"></button>
+        <button class="indicator" onclick="navigateToPage(7)"></button>
+    </div>
+    
+    <!-- Page Counter -->
+    <div id="page-counter" class="page-counter">01 / 08</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
