@@ -192,6 +192,8 @@ body {
   padding: 2rem;
   max-width: 800px;
   width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 /* Hero Section */
@@ -206,6 +208,8 @@ body {
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
   transition: transform 0.3s ease-out;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .sub-title {
@@ -214,6 +218,8 @@ body {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
   transition: transform 0.3s ease-out;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .hero-icon {
@@ -227,6 +233,8 @@ body {
   justify-content: center;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease-out;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .brain-icon {
@@ -247,6 +255,8 @@ body {
   justify-content: center;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease-out;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .page-icon svg {
@@ -261,6 +271,8 @@ body {
   color: white;
   margin-bottom: 1rem;
   transition: transform 0.3s ease-out;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .page-description {
@@ -272,6 +284,8 @@ body {
   margin-right: auto;
   line-height: 1.6;
   transition: transform 0.3s ease-out;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Buttons */
@@ -281,6 +295,8 @@ body {
   gap: 1rem;
   align-items: center;
   margin-bottom: 4rem;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .btn {
@@ -297,6 +313,8 @@ body {
   transition: all 0.3s ease-out;
   text-decoration: none;
   min-width: 200px;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .btn:hover {
