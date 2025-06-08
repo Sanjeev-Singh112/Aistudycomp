@@ -550,6 +550,30 @@ body::after {
 .gradient-7 {
   background: linear-gradient(135deg, #14b8a6, #3b82f6, #8b5cf6);
 }
+/* Hide all scroll indicators */
+.scroll-indicator,
+.continue-indicator {
+  display: none !important;
+}
+
+.scroll-text,
+.scroll-mouse,
+.scroll-wheel {
+  display: none !important;
+}
+html,
+body {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
 .scroll-hint {
   display: none;
 }
