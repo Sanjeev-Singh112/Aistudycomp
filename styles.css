@@ -550,3 +550,6 @@ body::after {
 .gradient-7 {
   background: linear-gradient(135deg, #14b8a6, #3b82f6, #8b5cf6);
 }
+.scroll-hint {
+  display: none;
+}
